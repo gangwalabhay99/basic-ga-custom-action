@@ -8,7 +8,7 @@ inputs:
 outputs:
   used-cache:
     description: whether the cached was used or not
-    value: ${{steps.install.outputs.cache_echo}}
+    value: ${{steps.install.outputs.cacheecho}}
 runs:
   using: composite
   steps:
@@ -28,5 +28,5 @@ runs:
 
       run: |
         npm ci
-        echo "cache_echo=${{inputs.caching}}>>$GITHUB_OUTPUT"
+        echo "cacheecho=${{inputs.caching}}">>$GITHUB_OUTPUT
       shell: bash
